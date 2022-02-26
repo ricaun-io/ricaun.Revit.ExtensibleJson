@@ -5,6 +5,15 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ricaun.Revit.ExtensibleJson", "ricaun.Revit.ExtensibleJson\ricaun.Revit.ExtensibleJson.csproj", "{C94C5551-B010-4908-874C-0732ABF1D512}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build", "Build\Build.csproj", "{D390CD8B-2093-4483-9D51-5E7A2301C8B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{A301844A-E87E-4AB5-8053-E73AC71F2B27}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +24,10 @@ Global
 		{C94C5551-B010-4908-874C-0732ABF1D512}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C94C5551-B010-4908-874C-0732ABF1D512}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C94C5551-B010-4908-874C-0732ABF1D512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D390CD8B-2093-4483-9D51-5E7A2301C8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D390CD8B-2093-4483-9D51-5E7A2301C8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D390CD8B-2093-4483-9D51-5E7A2301C8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D390CD8B-2093-4483-9D51-5E7A2301C8B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

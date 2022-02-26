@@ -2,7 +2,7 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System;
-
+#if DEBUG
 namespace ricaun.Revit.ExtensibleJson.Revit.Commands
 {
     [Transaction(TransactionMode.Manual)]
@@ -16,3 +16,4 @@ namespace ricaun.Revit.ExtensibleJson.Revit.Commands
         }
     }
 }
+#endif
