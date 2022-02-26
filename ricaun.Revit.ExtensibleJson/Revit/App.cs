@@ -1,7 +1,7 @@
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System;
-
+#if DEBUG
 namespace ricaun.Revit.ExtensibleJson.Revit
 {
     public class App : IExternalApplication
@@ -17,3 +17,4 @@ namespace ricaun.Revit.ExtensibleJson.Revit
         }
     }
 }
+#endif
