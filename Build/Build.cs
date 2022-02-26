@@ -4,8 +4,7 @@ using ricaun.Nuke;
 using ricaun.Nuke.Components;
 
 [CheckBuildProjectConfigurations]
-class Build : NukeBuild, IPublishRevit
+class Build : NukeBuild, IPublishPack
 {
-    // string IHazRevitPackageBuilder.Application => "Revit.App";
-    public static int Main() => Execute<Build>(x => x.From<IPublishRevit>().Build);
+    public static int Main() => Execute<Build>(x => x.From<IPublishPack>().Build);
 }
