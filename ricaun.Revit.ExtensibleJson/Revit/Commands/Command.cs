@@ -13,7 +13,7 @@ namespace ricaun.Revit.ExtensibleJson.Revit.Commands
             UIApplication uiapp = commandData.Application;
 
             var model = new Model() { Id = new ElementId(BuiltInCategory.OST_GenericModel), Text = "Hello Revit" };
-            var jsonServiceModel = new JsonService<Model>();
+            IJsonService<Model> jsonServiceModel = new JsonService<Model>();
 
             var o = jsonServiceModel.DeserializeObject<object>("{}");
             Console.WriteLine(o.GetType());
@@ -25,11 +25,9 @@ namespace ricaun.Revit.ExtensibleJson.Revit.Commands
             Console.WriteLine(modelDeserialize);
             Console.WriteLine(modelDeserialize.Id == new ElementId(BuiltInCategory.OST_GenericModel));
 
-            var jsonService = new JsonService();
+            IJsonService jsonService = new JsonService();
 
             var smodel = jsonService.SerializeObject(model);
-
-
 
             Console.WriteLine(jsonService.DeserializeObject<Model>(smodel));
 

@@ -14,6 +14,36 @@ ricaun.Revit.ExtensibleJson is a package for Revit to use Newtonsoft.Json as Ext
 
 * [Latest release](../../releases/latest)
 
+## JsonService<TJson> / JsonService 
+
+```C#
+IJsonService<TJson> jsonService = new JsonService<TJson>();
+```
+### Serialize / SerializeObject
+```C#
+TJson value;
+string serialize = jsonService.Serialize(value);
+```
+```C#
+object value;
+string serialize = jsonService.SerializeObject<object>(value);
+```
+
+### Deserialize / DeserializeObject
+```C#
+string value;
+TJson deserialize = jsonService.Deserialize(value);
+```
+```C#
+string value;
+object deserialize = jsonService.DeserializeObject<object>(value);
+```
+
+### JsonSerializerSettings
+```C#
+JsonSerializerSettings setting = jsonService.GetSettings();
+```
+
 ### Vídeo
 
 [![VideoIma]][Video]
