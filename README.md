@@ -44,7 +44,7 @@ object deserialize = jsonService.DeserializeObject<object>(value);
 JsonSerializerSettings setting = jsonService.GetSettings();
 ```
 
-### Vídeo
+### Vï¿½deo
 
 [![VideoIma]][Video]
 
