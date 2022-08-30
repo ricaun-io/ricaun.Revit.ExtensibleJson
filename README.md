@@ -44,9 +44,10 @@ object deserialize = jsonService.DeserializeObject<object>(value);
 JsonSerializerSettings setting = jsonService.GetSettings();
 ```
 
-### V�deo
+### Video
 
 [![VideoIma]][Video]
+[![VideoIma2]][Video2]
 
 ## License
 
@@ -58,3 +59,5 @@ Do you like this package? Please [star this project on GitHub](../../stargazers)
 
 [Video]: https://youtu.be/yvyXABcAvtc
 [VideoIma]: https://img.youtube.com/vi/yvyXABcAvtc/hqdefault.jpg
+[Video2]: https://youtu.be/yjOmPMBzKNA
+[VideoIma2]: https://img.youtube.com/vi/yjOmPMBzKNA/hqdefault.jpg
