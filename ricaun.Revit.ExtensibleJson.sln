@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ricaun.Revit.ExtensibleJson", "ricaun.Revit.ExtensibleJson\ricaun.Revit.ExtensibleJson.csproj", "{C94C5551-B010-4908-874C-0732ABF1D512}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ricaun.Revit.ExtensibleJson", "ricaun.Revit.ExtensibleJson\ricaun.Revit.ExtensibleJson.csproj", "{C94C5551-B010-4908-874C-0732ABF1D512}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build", "Build\Build.csproj", "{D390CD8B-2093-4483-9D51-5E7A2301C8B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Build", "Build\Build.csproj", "{D390CD8B-2093-4483-9D51-5E7A2301C8B5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{A301844A-E87E-4AB5-8053-E73AC71F2B27}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{A301844A-E87E-4AB5-8053-E73AC71F2B27}"
 	ProjectSection(SolutionItems) = preProject
 		CHANGELOG.md = CHANGELOG.md
 		LICENSE = LICENSE

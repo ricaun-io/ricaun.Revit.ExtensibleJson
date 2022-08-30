@@ -6,7 +6,7 @@ namespace ricaun.Revit.ExtensibleJson
     /// <summary>
     /// JsonService
     /// </summary>
-    public class JsonService : JsonService<object>
+    public class JsonService : JsonService<object>, IJsonService
     {
 
     }
@@ -15,7 +15,7 @@ namespace ricaun.Revit.ExtensibleJson
     /// JsonService
     /// </summary>
     /// <typeparam name="TJson"></typeparam>
-    public class JsonService<TJson>
+    public class JsonService<TJson> : IJsonService<TJson>
     {
         private readonly JsonSerializerSettings settings;
         /// <summary>
@@ -25,6 +25,7 @@ namespace ricaun.Revit.ExtensibleJson
         {
             settings = new JsonSerializerSettings();
             settings.Converters.Add(new ElementIdConverter());
+            settings.Converters.Add(new XYZConverter());
         }
 
         /// <summary>
@@ -57,7 +58,6 @@ namespace ricaun.Revit.ExtensibleJson
         /// <summary>
         /// Deserialize
         /// </summary>
-        /// <typeparam name="TJson"></typeparam>
         /// <param name="value"></param>
         /// <returns></returns>
         public TJson Deserialize(string value)
