@@ -12,38 +12,38 @@ namespace ricaun.Revit.ExtensibleJson.Revit.Commands
         {
             UIApplication uiapp = commandData.Application;
 
-            var model = new Model() { Id = new ElementId(BuiltInCategory.OST_GenericModel), Text = "Hello Revit" };
-            IJsonService<Model> jsonServiceModel = new JsonService<Model>();
+            var model = new Model()
+            {
+                Id = new ElementId(BuiltInCategory.OST_GenericModel),
+                Text = "Hello Revit",
+                Point = new XYZ(12, 1, -100)
+            };
 
-            var o = jsonServiceModel.DeserializeObject<object>("{}");
-            Console.WriteLine(o.GetType());
-            Console.WriteLine(jsonServiceModel.SerializeObject(o));
-
-            var serialize = jsonServiceModel.Serialize(model);
-            var modelDeserialize = jsonServiceModel.Deserialize(serialize);
-
-            Console.WriteLine(modelDeserialize);
-            Console.WriteLine(modelDeserialize.Id == new ElementId(BuiltInCategory.OST_GenericModel));
-
-            IJsonService jsonService = new JsonService();
-
-            var smodel = jsonService.SerializeObject(model);
-
-            Console.WriteLine(jsonService.DeserializeObject<Model>(smodel));
+            TestJsonService(model);
 
             return Result.Succeeded;
         }
+
+        public bool TestJsonService<T>(T value)
+        {
+            var jsonService = new JsonService<T>();
+            var json = jsonService.Serialize(value);
+            var jsonDeserialize = jsonService.Deserialize(json);
+            var jsonSerialize = jsonService.Serialize(jsonDeserialize);
+            var result = json == jsonSerialize;
+            Console.WriteLine($"{result} \t{json} \t{jsonSerialize}");
+            //Console.WriteLine(json);
+            //Console.WriteLine(jsonSerialize);
+            return result;
+        }
+
     }
 
     public class Model
     {
         public ElementId Id { get; set; }
         public string Text { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Id} {Text}";
-        }
+        public XYZ Point { get; set; }
     }
 }
 #endif

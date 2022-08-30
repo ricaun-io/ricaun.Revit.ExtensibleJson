@@ -25,6 +25,7 @@ namespace ricaun.Revit.ExtensibleJson
         {
             settings = new JsonSerializerSettings();
             settings.Converters.Add(new ElementIdConverter());
+            settings.Converters.Add(new XYZConverter());
         }
 
         /// <summary>
