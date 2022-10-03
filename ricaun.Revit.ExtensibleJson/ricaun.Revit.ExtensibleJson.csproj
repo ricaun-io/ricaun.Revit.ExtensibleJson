@@ -77,7 +77,7 @@
 
   <PropertyGroup>
     <PackageId>ricaun.Revit.ExtensibleJson</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <ProjectGuid>{c94c5551-b010-4908-874c-0732abf1d512}</ProjectGuid>
   </PropertyGroup>
 
@@ -148,7 +148,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="*" IncludeAssets="build; compile" PrivateAssets="All" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.*" IncludeAssets="build; compile" PrivateAssets="All" />
     <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="$(RevitVersion).*" IncludeAssets="build; compile" PrivateAssets="All" />
   </ItemGroup>
 
