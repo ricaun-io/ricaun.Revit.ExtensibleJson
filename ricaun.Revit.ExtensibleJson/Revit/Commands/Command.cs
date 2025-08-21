@@ -21,6 +21,23 @@ namespace ricaun.Revit.ExtensibleJson.Revit.Commands
 
             TestJsonService(model);
 
+            var jsonService = new JsonService<Model>();
+
+            var json = jsonService.Serialize(new Model()
+            {
+                Id = null,
+                Text = "Hello Revit",
+                Point = null
+            });
+
+            Console.WriteLine(json);
+
+            var jsonDeserialize = jsonService.Deserialize(json);
+            var jsonSerialize = jsonService.Serialize(jsonDeserialize);
+
+            Console.WriteLine(jsonSerialize);
+
+
             return Result.Succeeded;
         }
 
