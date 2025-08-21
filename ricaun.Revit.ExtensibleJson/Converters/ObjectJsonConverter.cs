@@ -5,54 +5,57 @@ using System;
 namespace ricaun.Revit.ExtensibleJson.Converters
 {
     /// <summary>
-    /// ObjectJsonConverter
+    /// Provides a base class for custom JSON converters that handle serialization and deserialization
+    /// of objects of type <typeparamref name="T"/> using <see cref="JObject"/>.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The type of object to convert.</typeparam>
     public abstract class ObjectJsonConverter<T> : JsonConverter
     {
         /// <summary>
-        /// Convert <paramref name="value"/> to <typeparamref name="T"/>
+        /// Converts the specified <see cref="JObject"/> to an object of type <typeparamref name="T"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">The <see cref="JObject"/> to convert.</param>
+        /// <returns>An object of type <typeparamref name="T"/>.</returns>
         public abstract T Read(JObject value);
 
         /// <summary>
-        /// Convert <paramref name="value"/> to object
+        /// Converts the specified object of type <typeparamref name="T"/> to a serializable object.
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">The object of type <typeparamref name="T"/> to convert.</param>
+        /// <returns>A serializable object representation of <paramref name="value"/>.</returns>
         public abstract object Write(T value);
 
         /// <summary>
-        /// Check type equal to <typeparamref name="T"/>
+        /// Determines whether this converter can convert the specified object type.
         /// </summary>
-        /// <param name="objectType"></param>
-        /// <returns></returns>
+        /// <param name="objectType">The type of the object to check.</param>
+        /// <returns>
+        /// <c>true</c> if the object type is equal to <typeparamref name="T"/>; otherwise, <c>false</c>.
+        /// </returns>
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(T);
         }
 
         /// <summary>
-        /// ReadJson
+        /// Reads the JSON representation of the object and converts it to an object of type <typeparamref name="T"/>.
         /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="objectType"></param>
-        /// <param name="existingValue"></param>
-        /// <param name="serializer"></param>
-        /// <returns></returns>
+        /// <param name="reader">The <see cref="JsonReader"/> to read from.</param>
+        /// <param name="objectType">The type of the object to convert.</param>
+        /// <param name="existingValue">The existing value of the object being read.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        /// <returns>An object of type <typeparamref name="T"/>.</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             return Read(JObject.Load(reader));
         }
 
         /// <summary>
-        /// WriteJson
+        /// Writes the JSON representation of the object of type <typeparamref name="T"/>.
         /// </summary>
-        /// <param name="writer"></param>
-        /// <param name="value"></param>
-        /// <param name="serializer"></param>
+        /// <param name="writer">The <see cref="JsonWriter"/> to write to.</param>
+        /// <param name="value">The object value to write.</param>
+        /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             JToken.FromObject(Write((T)value))
