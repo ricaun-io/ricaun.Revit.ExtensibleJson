@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Features
 - Support Revit 2025+
 ### Updates
-- Update `ElementIdConverter` to support Revit 2024+
+- Update `ElementIdConverter` to support Revit 2024+ with optimize repeated instantiation.
 ### Fixes
 - Fix `ObjectJsonConverter` to support `null` value.
 - Fix `XYZConverter` to support `null` value.
