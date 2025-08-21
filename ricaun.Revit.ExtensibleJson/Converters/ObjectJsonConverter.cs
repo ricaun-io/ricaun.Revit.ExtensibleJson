@@ -47,6 +47,8 @@ namespace ricaun.Revit.ExtensibleJson.Converters
         /// <returns>An object of type <typeparamref name="T"/>.</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
+            if (reader.TokenType == JsonToken.Null)
+                return Read(null);
             return Read(JObject.Load(reader));
         }
 

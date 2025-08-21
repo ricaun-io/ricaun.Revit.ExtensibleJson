@@ -68,8 +68,8 @@ namespace ricaun.Revit.ExtensibleJson.Converters
         /// <returns>An <see cref="Autodesk.Revit.DB.ElementId"/> instance, or <c>null</c> if the value is not present.</returns>
         public override ElementId Read(JObject value)
         {
-            var id = value.Value<long?>(ElementIdKey) ?? value.Value<long?>(ElementIdKeyInteger);
-            if (id == null) return NewElementId((long)id);
+            var id = value?.Value<long?>(ElementIdKey) ?? value?.Value<long?>(ElementIdKeyInteger);
+            if (id == null) return null;
             return NewElementId((long)id);
         }
 
