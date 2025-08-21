@@ -27,7 +27,7 @@ namespace ricaun.Revit.ExtensibleJson.Revit.Commands
             {
                 Id = null,
                 Text = "Hello Revit",
-                Point = new XYZ(12, 1, -100)
+                Point = null
             });
 
             Console.WriteLine(json);

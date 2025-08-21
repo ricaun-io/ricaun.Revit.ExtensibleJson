@@ -30,6 +30,9 @@ namespace ricaun.Revit.ExtensibleJson.Converters
         /// <returns>An <see cref="Autodesk.Revit.DB.XYZ"/> instance with the values from the JSON object.</returns>
         public override XYZ Read(JObject value)
         {
+            if (value is null) 
+                return null;
+
             double x = (double)value[XKey];
             double y = (double)value[YKey];
             double z = (double)value[ZKey];
