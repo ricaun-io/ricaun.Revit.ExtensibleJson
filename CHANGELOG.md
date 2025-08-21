@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixes
 - Fix `ObjectJsonConverter` to support `null` value.
 - Fix `XYZConverter` to support `null` value.
+### Tests
+- Add test project with `JsonServiceTests`.
 
 ## [1.0.3] / 2022-10-10
 ### Features
